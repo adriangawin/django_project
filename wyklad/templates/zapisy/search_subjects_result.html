@@ -1,0 +1,14 @@
+{% include 'zapisy/header.html' %}
+<h1>Wyszukane przedmioty</h1>
+{% for przedmiot in subjects %}
+<div style="border:2px solid black; margin: 2px; padding: 5px; width: 400px">
+<p>Nazwa:      {{ przedmiot.nazwa }} </p>
+<p>Wykladowca:  {{ przedmiot.wykladowca.imie }} {{ przedmiot.wykladowca.nazwisko }}</p>
+<p>Zapisani studenci:<p>
+{% for student in przedmiot.studenci.all %}
+<p style="margin:20px">{{ student.imie }} {{student.nazwisko}}</p>
+{% empty %}
+<p style="margin:20px">Brak studentów przypisanych do tego przedmiotu</p>
+{%endfor%}
+</div>
+{%endfor%}

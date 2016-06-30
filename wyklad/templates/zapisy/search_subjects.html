@@ -1,0 +1,13 @@
+{% include 'zapisy/header.html' %}
+{% if error %}
+<p style="color: red;">Bledne dane, sprobuj jeszcze raz.</p>
+{% endif %}
+<h2>Wyszukiwanie przedmiotow</h2>
+<form action="/zapisy/search_subjects_result/" method="get">
+Nazwa przedmiotu: <input type="text" name="query">
+<input type="submit" value="Szukaj">
+</form>
+<form action="/zapisy/search_subjects_result/" method="get">
+  <input type="text" name="query" value="all" hidden="true">
+  <input type="submit" value="Pokaz wszystkie przedmioty">
+</form>

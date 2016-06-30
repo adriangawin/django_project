@@ -1,0 +1,14 @@
+{% include 'zapisy/header.html' %}
+{% if error %}
+<p style="color: red;">Proszę zadać pytanie</p>
+{% endif %}
+<h2>Wyszukiwanie studentow</h2>
+<form action="/zapisy/search_student_result/" method="get">
+Imie: <input type="text" name="imie"><br>
+Nazwisko:<input type="text" name="nazwisko"><br>
+<input type="submit" value="Szukaj"><br>
+</form>
+<form action="/zapisy/search_student_result/" method="get">
+  <input type="text" name="show" hidden="true">
+  <input type="submit" value="Pokaż wszystkich studentow">
+</form>

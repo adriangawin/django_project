@@ -1,0 +1,6 @@
+<h1>Znalezione wykłady</h1>
+{% for wyklad in wyklady %}
+<p>Nazwa:      {{ wyklad.nazwa }} </p>
+<p>Wykładowca: {{ wyklad.wykladowca.imie }} </p>
+
+{%endfor%}

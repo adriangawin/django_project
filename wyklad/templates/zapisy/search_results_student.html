@@ -1,0 +1,7 @@
+{% include 'zapisy/header.html' %}
+<h1>Studenci</h1>
+{% for student in studenci %}
+<p>{{ student.imie }} {{student.nazwisko}}</p>
+
+
+{%endfor%}

@@ -1,0 +1,21 @@
+{% include 'zapisy/header.html' %}
+{% if error %}
+<p style="color: red;">
+Blad danych.
+</p>
+{% endif %}
+{% if odpowiedz %}
+{{ odpowiedz2 }}
+{% else %}
+<form action="../zapisz_result/" method="post">
+{% csrf_token %}
+Imie:       <input type="text" name="imie"><br>
+Nazwisko:   <input type="text" name="nazwisko"><br>
+Przedmiot:  <select name="przedmiot">
+	{% for przedmiot in subjects %}
+	<option value="{{przedmiot.nazwa}}">{{ przedmiot.nazwa }}</option>
+	{%endfor%}
+</select><br>
+<input type="submit" value="Zapisz">
+</form>
+{% endif %}

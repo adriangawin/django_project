@@ -1,0 +1,11 @@
+{% if error %}
+<p style="color: red;">Proszę zadać pytanie</p>
+{% endif %}
+<form action="/zapisy/search/" method="get">
+<input type="text" name="query">
+<input type="submit" value="Szukaj">
+</form>
+<form action="/zapisy/search/" method="get">
+	<input type="text" name="query" hidden="true"></input>
+	<input type="submit" value="Pokaz wszystkich nauczycieli"></input>
+</form>
